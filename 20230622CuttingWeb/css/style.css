@@ -1,5 +1,5 @@
 /* 
- *page name
+ *index
  *Copyright 2023
  *Author
  *Licensed
@@ -198,7 +198,7 @@ a{
 .btn.btn-primary:hover{
     background-color: #f68e13;
     color: black;
-    border: #f68e13;
+    border: 2px solid #f68e13;
 }
 
 /* image-container */
@@ -615,6 +615,10 @@ a{
     padding-left: 40px;
     color: #fff;
     background-color: #1B1C1E;
+    transition: all 0.3s;
+}
+.services .services-preview:hover{
+    margin-bottom: 10px;
 }
 .services .services-preview i{
     font-size: 36px;
@@ -860,6 +864,14 @@ a{
 }
 .works .image-container{
     margin-bottom: 30px;
+    overflow: hidden;
+}
+.works .image-container .image{
+    max-width: 397px;
+    transition: all 0.3s;
+}
+.works .image-container .image:hover{
+    transform: scale(1.2);
 }
 .overlay {
     position: absolute;
@@ -870,7 +882,7 @@ a{
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
     background-color: #f68e13;
     display: flex;
     align-items: center;
@@ -1012,8 +1024,15 @@ a{
 .blog .image-container::before{
     padding-top: 80%;
 }
-.blog .image{
-    margin-bottom: 20px;
+.blog .image-container{
+    overflow: hidden;
+}
+.blog .image-container .image{
+    transition: all 1s;
+}
+.blog .image-container .image:hover{
+    transform: scale(1.2);
+    -webkit-filter:grayscale(1);
 }
 .blog a{
     display: inline-block;
@@ -1021,6 +1040,7 @@ a{
     margin: 0 0 5px;
     margin-top: 15px;
     transition: all 0.3s;
+    padding-top: 10px;
 }
 .blog a:hover{
     color: blue;
@@ -1107,11 +1127,15 @@ a{
     letter-spacing: 1px;
     padding: 15px 0;
     color: #f68e13;
+    transition: all .3s;
+}
+.footer .logo:hover{
+    color: #FFF;
 }
 .footer .footer-item{
     margin: 30px 0;
 }
-.footer a{
+.footer .footer-item a{
     margin: 10px 20px;
 }
 .footer i{
@@ -1123,6 +1147,13 @@ a{
     color: #FFF;
     width: 100%; 
     text-align: center;
+}
+.footer .footer-inner a{
+    color: #f68e13;
+    transition: all .3s;
+}
+.footer .footer-inner a:hover{
+    color: #FFF;
 }
 /* ---------------------- *\
     Utility
