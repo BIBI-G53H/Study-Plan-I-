@@ -245,15 +245,34 @@ a{
     width: 100%;
     height: 100%;
 }
+.mask-dark-colse{
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: .3s;
+    backdrop-filter: blur(10px);
+}
+.mask-dark-colse.active{
+    opacity: 1;
+    z-index: 499;
+}
 
 /* header */
 .header{
-    background-color: rgba(0,0,0,0.85);
     display: flex;
-    z-index: 999;
+    z-index: 400;
     height: 80px;
     position: fixed;
     width: 100%;
+    transition: all .5s;
+}
+.header.active{
+    background-color: rgba(0,0,0,0.85);
 }
 
 /* hero */
@@ -290,8 +309,6 @@ a{
     flex: auto;
     align-items: center;
     justify-content: flex-end;
-
-    /* display: none; */
 }
 .navbar .nav .nav-item{
     display: inline-block;
@@ -322,35 +339,20 @@ a{
 }
 
 /* close-btn */
-#offcanvas-menu .close-btn{
-    width: 48px;
-    height: 48px;
-}
-#offcanvas-menu .close-btn span{
-    width: 25px;
-    height: 2px;
-    position: absolute;
-    background-color: #fff;
-    top: 50%;
-    left: 50%;
-}
-#offcanvas-menu .close-btn span:nth-child(1){
-    transform: translate(-50%,-50%) rotate(45deg);
-}
-#offcanvas-menu .close-btn span:nth-child(2){
-    transform: translate(-50%,-50%) rotate(-45deg);
-}
 #offcanvas-menu{
     width: 300px;
     height: 100%;
     position: fixed;
-    display: flex;
+    display: none;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
     right: 0;
     display: none;
     background-color: #FFF;
+}
+#offcanvas-menu.active{
+    display: flex;
 }
 #offcanvas-menu .brand{
     background-color: #181718;
@@ -366,6 +368,12 @@ a{
     background-image: url(https://j4demo2.ltheme.com/joomla/lt-mypro/images/logo6.png);
     background-size: cover;
 }
+#offcanvas-menu .offcanvas-inner{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
 #offcanvas-menu #search{
     border: 1px solid #ced4da;
     height: 38px;
@@ -377,7 +385,15 @@ a{
 }
 #offcanvas-menu .nav-item{
     padding-top: 25px;
-    transition: all .3s;
+    transition: all .5s;
+}
+#offcanvas-menu .nav-item ul{
+    flex-direction: column
+}
+#offcanvas-menu .nav-item i{
+    color: #9da0a3;
+    right: 0;
+    position: absolute;
 }
 #offcanvas-menu .nav-link{
     color: #9da0a3;
@@ -394,8 +410,87 @@ a{
 #offcanvas-menu:target{
     display: flex;
 }
-
-
+.offcanvas-inner li{
+    padding: 12px 10px;
+}
+.offcanvas-inner a{
+    color: #9da0a3;
+}
+.offcanvas-inner a:hover{
+    color: #f68e13;
+    transition: all .3s;
+}
+.pages{
+    transition: all .5s;
+    display: none;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.pages.active{
+    display: flex;
+}
+.pages .aboutme{
+    display: none;
+}
+.pages .aboutme.active{
+    display: flex;
+}
+.user{
+    display: none;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.user.active{
+    display: flex;
+}
+.features{
+    transition: all .5s;
+    display: none;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.features.active{
+    display: flex;
+}
+.core-features{
+    display: none;
+}
+.core-features.active{
+    display: flex;
+}
+.layout-builder{
+    display: none;
+}
+.layout-builder.active{
+    display: flex;
+}
+.easy-customization{
+    display: none;
+}
+.easy-customization.active{
+    display: flex;
+}
+.powerful-features{
+    display: none;
+}
+.powerful-features.active{
+    display: flex;
+}
+.megaMenu-options{
+    display: none;
+}
+.megaMenu-options.active{
+    display: flex;
+}
+.others-features{
+    display: none;
+}
+.others-features.active{
+    display: flex;
+}
+.aboutme a,.core-features a,.layout-builder a,.easy-customization a,.powerful-features a,.megaMenu-options a,.others-features a{
+    padding-left: 10px;
+}
 /* menu-toggle */
 .menu-toggle{
     width: 48px;
@@ -412,16 +507,30 @@ a{
     position: absolute;
     left: 50%;
     transform: translate(-50%,0);
+    transition: all .3s;
 }
-.navbar .menu-toggle span:nth-child(1){
+.menu-toggle span:nth-child(1){
     top:10px;
 }
-.navbar .menu-toggle span:nth-child(2){
-    top:17px;
+.menu-toggle.active span:nth-child(1){
+    transform: translate(-50%,300%) rotate(45deg);
+    width: 25px;
 }
-.navbar .menu-toggle span:nth-child(3){
+.menu-toggle span:nth-child(2){
+    top:17px;   
+}
+.menu-toggle.active span:nth-child(2){
+    opacity: 0;
+}
+.menu-toggle span:nth-child(3){
     top:24px;
 }
+.menu-toggle.active span:nth-child(3){
+    transform: translate(-50%,-400%) rotate(-45deg);
+    width: 25px;
+}
+
+
 
 /* jumbotron */
 .jumbotron{
@@ -1260,6 +1369,9 @@ a{
 .orange{
     color: #f68e13;
 }
-
-
-
+.hr-long{
+    width: 230px;
+}
+.hr-short{
+    width: 200px;
+}
