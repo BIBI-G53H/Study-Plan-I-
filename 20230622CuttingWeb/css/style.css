@@ -529,8 +529,44 @@ a{
     transform: translate(-50%,-400%) rotate(-45deg);
     width: 25px;
 }
-
-
+/* right-menu-toggle */
+.right-menu-toggle{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    margin-top: 10px;
+}
+.right-menu-toggle span{
+    display: block;
+    max-width: 25px;
+    width: 100%;
+    height: 2px;
+    background-color: #FFF;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    transition: all .3s;
+}
+.right-menu-toggle span:nth-child(1){
+    top:10px;
+}
+.right-menu-toggle.active span:nth-child(1){
+    transform: translate(-50%,300%) rotate(45deg);
+    width: 25px;
+}
+.right-menu-toggle span:nth-child(2){
+    top:17px;   
+}
+.right-menu-toggle.active span:nth-child(2){
+    opacity: 0;
+}
+.right-menu-toggle span:nth-child(3){
+    top:24px;
+}
+.right-menu-toggle.active span:nth-child(3){
+    transform: translate(-50%,-400%) rotate(-45deg);
+    width: 25px;
+}
 
 /* jumbotron */
 .jumbotron{
@@ -1375,3 +1411,4 @@ a{
 .hr-short{
     width: 200px;
 }
+

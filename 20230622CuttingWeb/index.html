@@ -15,7 +15,7 @@
             <ul id="popup-menu">
                 <div class="brand">  
                     <div class="image"></div>
-                    <a href="#!" class="menu-toggle">
+                    <a href="#!" class="right-menu-toggle active">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -779,6 +779,13 @@ $('.menu-toggle').on('click', function(){
     $('.mask-dark-colse').toggleClass('active');
 })
 
+$('.right-menu-toggle').on('click', function(){
+    $('.navbar .nav').toggleClass('active');
+    $('#offcanvas-menu').toggleClass('active');
+    $('.mask-dark-colse').toggleClass('active');
+    $('.menu-toggle').toggleClass('active');
+})
+
 $('.offcanvas-toggle').on('click', function(){
     $(this).toggleClass('active');
     $('.pages').toggleClass('active');
@@ -787,6 +794,7 @@ $('.offcanvas-toggle').on('click', function(){
 $('.mask-dark-colse').on('click', function(){
     $(this).toggleClass('active');
     $('#offcanvas-menu').toggleClass('active');
+    $('.menu-toggle').toggleClass('active');
 })
 
 $('.aboutme-toggle').on('click', function(){
@@ -833,9 +841,6 @@ $('.others-features-toggle').on('click', function(){
     $(this).toggleClass('active');
     $('.others-features').toggleClass('active');
 })
-
-
-
 
 </script>
 </html>
